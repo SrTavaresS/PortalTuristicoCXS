@@ -397,7 +397,7 @@ footer {
 }
 
 .ponto-turistico:hover .descricao {
-    max-height: 500px;
+    max-height: 1000px;
 }
 
 .ponto-turistico:hover .galeria img {
