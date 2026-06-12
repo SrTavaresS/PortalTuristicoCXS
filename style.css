@@ -1,13 +1,16 @@
+/*VARIÁVEIS*/
+
 :root {
     --vinho: #7B1E3A;
     --verde: #2E5E4E;
     --creme: #F5F1E8;
     --cinza-escuro: #2C2C2C;
     --cinza-claro: #EAEAEA;
-
     --hamburger-btn-size: 32px;
     --hamburger-btn-gap: 4px;
 }
+
+/*RESET*/
 
 * {
     margin: 0;
@@ -18,10 +21,10 @@
 body {
     font-family: sans-serif;
     overflow-x: hidden;
-    background-color: white;
+    background: white;
 }
 
-/* HEADER */
+/*HEADER*/
 
 header {
     display: flex;
@@ -44,30 +47,25 @@ button {
     cursor: pointer;
 }
 
-/* MENU HAMBURGUER */
+/*HAMBURGUER*/
 
 .btn-hamburger {
     width: var(--hamburger-btn-size);
     height: var(--hamburger-btn-size);
-
     position: relative;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     gap: var(--hamburger-btn-gap);
 }
 
 .btn-hamburger i {
     width: 24px;
     height: 2px;
-
-    background-color: white;
+    background: white;
     border-radius: 4px;
-
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .btn-hamburger.active i {
@@ -86,7 +84,7 @@ button {
     transform: rotate(-45deg);
 }
 
-/* MENU MOBILE */
+/*MENU*/
 
 nav {
     position: fixed;
@@ -95,13 +93,13 @@ nav {
     width: 80%;
     max-width: 320px;
     height: 100vh;
+    padding: 20px;
     background: linear-gradient(
         180deg,
         var(--vinho),
         var(--verde)
     );
-    padding: 20px;
-    transition: right 0.3s ease;
+    transition: right .3s ease;
     z-index: 1000;
 }
 
@@ -111,10 +109,8 @@ nav.active {
 
 nav ul {
     list-style: none;
-
     display: flex;
     flex-direction: column;
-
     gap: 10px;
 }
 
@@ -124,62 +120,31 @@ nav li.close-button {
 
 nav a {
     display: block;
-
+    padding: 10px 12px;
     text-decoration: none;
     color: white;
-
-    padding: 10px 12px;
     border-radius: 8px;
-
-    transition: 0.3s;
+    transition: .3s;
 }
 
 nav a:hover {
-    background-color: rgba(255,255,255,.15);
+    background: rgba(255,255,255,.15);
 }
 
-/* DESKTOP */
-
-@media (min-width: 768px) {
-
-    .btn-hamburger {
-        display: none;
-    }
-
-    nav {
-        position: static;
-        width: auto;
-        height: auto;
-        background: transparent;
-        padding: 0;
-    }
-
-    nav ul {
-        flex-direction: row;
-    }
-
-    nav a {
-        color: white;
-    }
-}
-
-/* MAIN */
+/*MAIN*/
 
 main {
     min-height: calc(100vh - 72px);
 }
 
-/* HERO */
+/*HOME / HERO*/
 
 #container {
     display: flex;
     justify-content: center;
     align-items: center;
-
     gap: 40px;
-
     max-width: 1200px;
-
     margin: 0 auto;
     padding: 40px 20px;
 }
@@ -187,21 +152,16 @@ main {
 #container img {
     width: 500px;
     max-width: 100%;
-
     border-radius: 30px;
 }
 
 .texto {
     max-width: 500px;
-
-    display: flex;
-    flex-direction: column;
 }
 
 .texto h1 {
     color: var(--verde);
     margin-bottom: 15px;
-
     font-size: 3rem;
 }
 
@@ -210,12 +170,11 @@ main {
     font-size: 1.1rem;
 }
 
-/* DESTAQUES */
+/*CARDS*/
 
 .destaques {
     text-align: center;
     margin-top: 60px;
-
     padding: 0 20px;
 }
 
@@ -223,43 +182,33 @@ main {
     margin-bottom: 30px;
 }
 
-/* CARDS */
-
 .cards {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
     gap: 25px;
 }
 
 .card {
     width: 300px;
-
-    background-color: white;
-
+    background: white;
     border-radius: 12px;
     overflow: hidden;
-
     box-shadow: 0 2px 10px rgba(0,0,0,.15);
-
-    transition: transform .3s ease,
-                box-shadow .3s ease;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
 .card img {
     width: 100%;
     height: 200px;
-
     object-fit: cover;
-
-    transition: transform .4s ease;
+    transition: .4s;
 }
 
 .card h3 {
     padding: 15px 15px 5px;
-
-    transition: color .3s ease;
 }
 
 .card p {
@@ -268,9 +217,7 @@ main {
 
 .card:hover {
     transform: translateY(-10px);
-
     border-bottom: 5px solid var(--vinho);
-
     box-shadow: 0 10px 25px rgba(0,0,0,.25);
 }
 
@@ -282,77 +229,7 @@ main {
     color: var(--vinho);
 }
 
-/* FOOTER */
-
-footer {
-    margin-top: 80px;
-
-    background-color: var(--cinza-escuro);
-    color: white;
-
-    box-shadow: 0 -4px 15px rgba(0,0,0,.2);
-}
-
-.footer-section {
-    text-align: center;
-    padding: 30px 20px;
-}
-
-.footer-section h3 {
-    color: var(--verde);
-    margin-bottom: 15px;
-}
-
-.footer-section p {
-    margin: 8px 0;
-    line-height: 1.5;
-
-    transition: color .3s ease;
-}
-
-.footer-section p:hover {
-    color: #00d4ff;
-}
-
-.footer-bottom {
-    text-align: center;
-
-    padding: 15px;
-
-    border-top: 1px solid rgba(255,255,255,.2);
-
-    font-size: .9rem;
-}
-
-/* RESPONSIVIDADE */
-
-@media (max-width: 768px) {
-
-    #container {
-        flex-direction: column;
-        text-align: center;
-
-        gap: 25px;
-    }
-
-    #container img {
-        width: 100%;
-        max-width: 450px;
-    }
-
-    .texto {
-        max-width: 100%;
-    }
-
-    .texto h1 {
-        font-size: 2.3rem;
-    }
-
-    .card {
-        width: 90%;
-        max-width: 350px;
-    }
-}
+/*PONTOS TURÍSTICOS*/
 
 .ponto-turistico {
     display: flex;
@@ -361,23 +238,40 @@ footer {
     max-width: 1000px;
     margin: 30px auto;
     padding: 20px;
-    border-radius: 15px;
     background: white;
+    border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,.1);
 }
 
 .galeria {
-    width: 300px;
-    height: 200px;
-    flex-shrink: 0;
+    width: 400px;
+    height: 230px;
+    position: relative;
     overflow: hidden;
     border-radius: 12px;
+    flex-shrink: 0;
 }
 
-.galeria img {
+.slide {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.slide.ativo {
+    opacity: 1;
+}
+
+.galeria img {
+    transition: .4s;
+}
+
+.ponto-turistico:hover .galeria img {
+    transform: scale(1.05);
 }
 
 .info {
@@ -392,47 +286,19 @@ footer {
 .descricao {
     max-height: 0;
     overflow: hidden;
-    transition: .4s ease;
     margin-top: 10px;
+    transition: .4s ease;
 }
 
 .ponto-turistico:hover .descricao {
     max-height: 1000px;
 }
 
-.ponto-turistico:hover .galeria img {
-    transform: scale(1.05);
-}
-
-.galeria img {
-    transition: .4s;
-}
-
-.galeria {
-    width: 300px;
-    height: 220px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    flex-shrink: 0;
-}
-
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1.5s ease;
-}
-
-.slide.ativo {
-    opacity: 1;
-}
+/*BANNER*/
 
 .banner-pagina {
-    height: 300px;
-    background-image: url("img/banner-caxias.jpg");
+    height: 400px;
+    background-image: url("img/estadio3.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -464,11 +330,96 @@ footer {
 }
 
 .banner-conteudo p {
-    font-size: 1.2rem;
     max-width: 700px;
+    font-size: 1.2rem;
+}
+
+/*FOOTER */
+
+footer {
+    margin-top: 80px;
+    background: var(--cinza-escuro);
+    color: white;
+    box-shadow: 0 -4px 15px rgba(0,0,0,.2);
+}
+
+.footer-section {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.footer-section h3 {
+    color: var(--verde);
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid rgba(255,255,255,.2);
+    font-size: .9rem;
+}
+
+/* RESPONSIVIDADE*/
+
+@media (min-width: 768px) {
+
+    .btn-hamburger {
+        display: none;
+    }
+
+    nav {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        padding: 0;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
 }
 
 @media (max-width: 768px) {
+
+    #container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .texto h1 {
+        font-size: 2.3rem;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .ponto-turistico {
+        flex-direction: column;
+        width: 92%;
+        max-width: 350px;
+        text-align: center;
+    }
+
+    .galeria {
+        width: 100%;
+        max-width: 280px;
+        height: 180px;
+        margin: 0 auto;
+    }
+
+    .descricao {
+        max-height: none;
+        overflow: visible;
+    }
 
     .banner-pagina {
         height: 220px;
@@ -481,5 +432,4 @@ footer {
     .banner-conteudo p {
         font-size: 1rem;
     }
-
 }
